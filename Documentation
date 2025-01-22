@@ -1,0 +1,48 @@
+Day2- Hackathon3
+Car Rental Website
+
+
+System Architecture and Workflow for Car Rental Marketplace
+
+Frontend (Next.js)
+
+*User-friendly interface for browsing rental cars.
+*Responsive design for mobile and desktop users.
+*Essential pages: Home, Car Listing, Car Details, Booking Cart, Checkout, and Order Confirmation.
+
+Sanity CMS as Backend
+*Manages car data, customer details, and booking records.
+*Schemas in Sanity to handle cars, bookings, and user profiles.
+
+Third-Party APIs
+*Payment Gateway: Handles payments.
+*Shipment/Booking Confirmation API: Sends confirmation of bookings and updates.
+
+Key Workflows
+User Registration =>
+
+User signs up -> Data stored in Sanity -> Confirmation sent to the user.
+Car Browsing=>
+
+User views car categories -> Sanity API fetches data -> Cars displayed on frontend.
+Booking Placement
+
+User selects a car and booking date -> Proceeds to checkout -> Booking details saved in Sanity.
+Payment Processing
+
+Payment details handled by the Payment Gateway -> Confirmation sent back to user and recorded in Sanity.
+Booking Confirmation
+
+Booking details confirmed through a Third-Party API -> Displayed to the user.
+API Requirements
+Endpoint: /cars
+
+Method: GET
+Description: Fetch all car details.
+Response: { "id": 1, "name": "Car Model", "price": 100, "availability": true }
+Endpoint: /bookings
+
+Method: POST
+Description: Create a new booking.
+Payload: { "userId": 123, "carId": 456, "startDate": "2025-01-22", "endDate": "2025-01-25" }
+Response: { "bookingId": 789, "status": "Confirmed" }
